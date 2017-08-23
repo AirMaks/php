@@ -2,26 +2,22 @@
 
 $message = false;
 $error = false;
-if (isset($_REQUEST['name']))
-{
+if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])) {
+
 
     $name = $_REQUEST['name'];
-    if (empty($name))
-    {
-        $error = 'Ваша команда не в полном составе! Кого-то забыли?';
-    }
+    $phone = $_REQUEST['phone'];
+    if (empty($name) || empty($phone)) {
+        $error = 'Не все поля заполнены?';
+    } else {
+        $row = 'Здравствуйте, ' . $name .
+             '. Ваш номер: ' . $phone . PHP_EOL;
 
-    else
-
-        {
-            $row = 'Ваше имя, ' . $name .
-                PHP_EOL;
-            file_put_contents('./contacts.txt', $row, FILE_APPEND);
-
-        $message = 'Спасибо, что проголосовали!';
-
+        file_put_contents('./contacts.txt', $row, FILE_APPEND);
+        $message = 'Спасибо, что проголосовали!';  //
     }
 }
+
 ?>
 
 
@@ -148,6 +144,35 @@ if (isset($_REQUEST['name']))
             </div>
         </div>
 
+        <form action="test.php" method="POST">
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">Интересы:</label>
+           <p> <input type='checkbox' class='checkbox'
+                   name="delete_1" value="123">
+               Спорт</p>
+            </div>
+
+            <div class="form-group">
+                <p> <input type='checkbox' class='checkbox'
+                           name="delete_2" value="456">
+                    Музыка</p>
+            </div>
+
+            <div class="form-group">
+                <p> <input type='checkbox' class='checkbox'
+                           name="delete_3" value="789">
+                    Программирование</p>
+            </div>
+
+            <div class="form-group">
+                <p> <input type='checkbox' class='checkbox'
+                           name="delete_4" value="111">
+                    Другое</p>
+            </div>
+
+        </form>
+
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">Отправить в FIFA</button>
@@ -155,9 +180,12 @@ if (isset($_REQUEST['name']))
         </div>
 
 
+
+
         <p class="alert-danger col-md-4"><?= $error ?></p>
 
     </form>
+
 
 
 <?php  endif; ?>
