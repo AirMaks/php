@@ -1,5 +1,4 @@
 <?php
-
 $message = false;
 $error = false;
 if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])) {
@@ -25,6 +24,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])) {
 
 <!doctype html>
 <html>
+<body style="background: #b1dfbb";>
 <head>
    <meta charset="UTF-8">
     <title>Document</title>
@@ -144,9 +144,9 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])) {
             </div>
         </div>
 
-        <form action="test.php" method="POST">
+
             <div class="form-group">
-                <label for="name" class="col-sm-2 control-label">Интересы:</label>
+                <label for="name" class="col-sm-2 control-label">Ваши интересы:</label>
            <p> <input type='checkbox' class='checkbox'
                    name="delete_1" value="123">
                Спорт</p>
@@ -170,7 +170,6 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])) {
                     Другое</p>
             </div>
 
-        </form>
 
 
         <div class="form-group">
