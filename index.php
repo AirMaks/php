@@ -1,32 +1,46 @@
 <?php
+
 $message = false;
 $error = false;
+
 //echo "<pre>";
 //var_dump($_REQUEST);
+
 if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['email'])
     and isset($_REQUEST['Position1'])  and isset($_REQUEST['Position2']) and isset($_REQUEST['Position3'])
     and isset($_REQUEST['Position4']) and isset($_REQUEST['Position5']) and isset($_REQUEST['Position6']) and isset($_REQUEST['Position7'])
     and isset($_REQUEST['Position8']) and isset($_REQUEST['Position9']) and isset($_REQUEST['Position10']) and isset($_REQUEST['Position11'])) {
 
 
-    $name = $_REQUEST['name'];
-    $phone = $_REQUEST['phone'];
-    $email = $_REQUEST['email'];
-    $Position1 = $_REQUEST['Position1'];
-    $Position2 = $_REQUEST['Position2'];
-    $Position3 = $_REQUEST['Position3'];
-    $Position4 = $_REQUEST['Position4'];
-    $Position5 = $_REQUEST['Position5'];
-    $Position6 = $_REQUEST['Position6'];
-    $Position7 = $_REQUEST['Position7'];
-    $Position8 = $_REQUEST['Position8'];
-    $Position9 = $_REQUEST['Position9'];
+          $name = $_REQUEST['name'];
+         $phone = $_REQUEST['phone'];
+         $email = $_REQUEST['email'];
+     $Position1 = $_REQUEST['Position1'];
+     $Position2 = $_REQUEST['Position2'];
+     $Position3 = $_REQUEST['Position3'];
+     $Position4 = $_REQUEST['Position4'];
+     $Position5 = $_REQUEST['Position5'];
+     $Position6 = $_REQUEST['Position6'];
+     $Position7 = $_REQUEST['Position7'];
+     $Position8 = $_REQUEST['Position8'];
+     $Position9 = $_REQUEST['Position9'];
     $Position10 = $_REQUEST['Position10'];
     $Position11 = $_REQUEST['Position11'];
 
-    if (empty($name) || empty($phone) || empty($email) || empty($Position1) || empty($Position2) || empty($Position3) || empty($Position4) || empty($Position5) || empty($Position6) || empty($Position7) || empty($Position8) || empty($Position9) || empty($Position10) || empty($Position11)) {
+    if       (empty($name) || empty($phone) ||
+             empty($email) || empty($Position1) ||
+         empty($Position2) || empty($Position3) ||
+         empty($Position4) || empty($Position5) ||
+         empty($Position6) || empty($Position7) ||
+         empty($Position8) || empty($Position9) ||
+        empty($Position10) || empty($Position11))
+
+    {
         $error = 'Не все поля заполнены?';
-    } else {
+    }
+
+    else
+        {
         $row = 'Здравствуйте, ' . $name .
             '. Ваш номер: ' . $phone .
             '. Ваш Вратарь: ' . $Position1 .
@@ -43,7 +57,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
             PHP_EOL;
 
         file_put_contents('./contacts.txt', $row, FILE_APPEND);
-        $message = 'Спасибо, что проголосовали!';  //
+        $message = 'Спасибо, что проголосовали!';
     }
 }
 
@@ -55,8 +69,9 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
 <!doctype html>
 <html>
 <body style="background: #b1dfbb";>
+
 <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
@@ -64,14 +79,14 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
 
 <div class="container">
 
-<h2>Команда Мечты</h2>
+   <h2>Команда Мечты</h2>
    <h3>Проголосуй за свою команду:</h3>
-<?php if ( $message) : ?>
-<?= $message ?>
-<?php else: ?>
+
+    <?php if ( $message) : ?>
+    <?= $message ?>
+    <?php else: ?>
 
     <form class="form-horizontal" action="index.php" method="post">
-
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">1.</label>
@@ -153,11 +168,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
         </div>
 
 
-
-
-
-
-            <div class="form-group">
+        <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Ваше имя</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="name" placeholder="Впишите имя" value="<?= $name ?? '' ?>">
