@@ -68,7 +68,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
 
 <!doctype html>
 <html>
-<body style="background: #b1dfbb";>
+<body style="background: #bd4147";>
 
 <head>
     <meta charset="UTF-8">
