@@ -3,8 +3,7 @@
 $message = false;
 $error = false;
 
-//echo "<pre>";
-//var_dump($_REQUEST);
+
 
            if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
           and isset($_REQUEST['email']) and isset($_REQUEST['Position1'])
@@ -70,12 +69,9 @@ $error = false;
 
 <!doctype html>
 <html>
-<<<<<<< HEAD
-<body style="background: #f5c6cb";>
-=======
-<body style="background: #bd4147";>
 
->>>>>>> 9a7808cd79c490e55684e85c171e33409e6c4c8f
+<body style="background: #fcf8e3";>
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
