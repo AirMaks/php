@@ -6,12 +6,15 @@ $error = false;
 //echo "<pre>";
 //var_dump($_REQUEST);
 
-if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['email'])
-    and isset($_REQUEST['Position1'])  and isset($_REQUEST['Position2']) and isset($_REQUEST['Position3'])
-    and isset($_REQUEST['Position4']) and isset($_REQUEST['Position5']) and isset($_REQUEST['Position6']) and isset($_REQUEST['Position7'])
-    and isset($_REQUEST['Position8']) and isset($_REQUEST['Position9']) and isset($_REQUEST['Position10']) and isset($_REQUEST['Position11'])) {
+           if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
+          and isset($_REQUEST['email']) and isset($_REQUEST['Position1'])
+      and isset($_REQUEST['Position2']) and isset($_REQUEST['Position3'])
+      and isset($_REQUEST['Position4']) and isset($_REQUEST['Position5'])
+      and isset($_REQUEST['Position6']) and isset($_REQUEST['Position7'])
+      and isset($_REQUEST['Position8']) and isset($_REQUEST['Position9'])
+     and isset($_REQUEST['Position10']) and isset($_REQUEST['Position11']))
 
-
+{
           $name = $_REQUEST['name'];
          $phone = $_REQUEST['phone'];
          $email = $_REQUEST['email'];
@@ -26,6 +29,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
      $Position9 = $_REQUEST['Position9'];
     $Position10 = $_REQUEST['Position10'];
     $Position11 = $_REQUEST['Position11'];
+
 
     if       (empty($name) || empty($phone) ||
              empty($email) || empty($Position1) ||
@@ -43,6 +47,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
         {
         $row = 'Здравствуйте, ' . $name .
             '. Ваш номер: ' . $phone .
+            '. Ваш email: ' . $email .
             '. Ваш Вратарь: ' . $Position1 .
             '. Ваш Левый защитник: ' . $Position2 .
             '. Ваш Центральный защитник: ' . $Position3 .
@@ -63,13 +68,9 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
 
 ?>
 
-
-
-
 <!doctype html>
 <html>
-<body style="background: #b1dfbb";>
-
+<body style="background: #f5c6cb";>
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -86,12 +87,14 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
     <?= $message ?>
     <?php else: ?>
 
-    <form class="form-horizontal" action="index.php" method="post">
+        <form class="form-horizontal" action="index.php" method="post">
+
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">1.</label>
             <div class="col-sm-4">
-                <input type="text" name="Position1" class="form-control"  placeholder="Вратарь" value="<?= $Position1 ?? '' ?>">
+                <input type="text" name="Position1" class="form-control"
+                       placeholder="Вратарь" value="<?= $Position1 ?? '' ?>">
             </div>
         </div>
 
@@ -100,85 +103,98 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">2.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position2" placeholder="Левый защитник" value="<?= $Position2 ?? '' ?>">
+                <input type="text" class="form-control" name="Position2"
+                       placeholder="Левый защитник" value="<?= $Position2 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">3.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position3" placeholder="Центральный защитник" value="<?= $Position3 ?? '' ?>">
+                <input type="text" class="form-control" name="Position3"
+                       placeholder="Центральный защитник" value="<?= $Position3 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">4.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position4" placeholder="Центральный защитник" value="<?= $Position4 ?? '' ?>">
+                <input type="text" class="form-control" name="Position4"
+                       placeholder="Центральный защитник" value="<?= $Position4 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">5.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position5" placeholder="Правый защитник" value="<?= $Position5 ?? '' ?>">
+                <input type="text" class="form-control" name="Position5"
+                       placeholder="Правый защитник" value="<?= $Position5 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">6.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position6" placeholder="Опорный полузащитник" value="<?= $Position6 ?? '' ?>">
+                <input type="text" class="form-control" name="Position6"
+                       placeholder="Опорный полузащитник" value="<?= $Position6 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">7.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position7" placeholder="Левый полузащитник" value="<?= $Position7 ?? '' ?>">
+                <input type="text" class="form-control" name="Position7"
+                       placeholder="Левый полузащитник" value="<?= $Position7 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">8.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position8" placeholder="Правый полузащитник" value="<?= $Position8 ?? '' ?>">
+                <input type="text" class="form-control" name="Position8"
+                       placeholder="Правый полузащитник" value="<?= $Position8 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">9.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position9" placeholder="Центральный полузащитник" value="<?= $Position9 ?? '' ?>">
+                <input type="text" class="form-control" name="Position9"
+                       placeholder="Центральный полузащитник" value="<?= $Position9 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">10.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position10" placeholder="Нападающий" value="<?= $Position10 ?? '' ?>">
+                <input type="text" class="form-control" name="Position10"
+                       placeholder="Нападающий" value="<?= $Position10 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">11.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position11" placeholder="Нападающий" value="<?= $Position11 ?? '' ?>">
+                <input type="text" class="form-control" name="Position11"
+                       placeholder="Нападающий" value="<?= $Position11 ?? '' ?>">
             </div>
         </div>
+
 
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Ваше имя</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="name" placeholder="Впишите имя" value="<?= $name ?? '' ?>">
+                <input type="text" class="form-control" name="name"
+                       placeholder="Впишите имя" value="<?= $name ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Номер Телефона</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="phone" placeholder="Впишите номер телефона" value="<?= $Phone ?? '' ?>">
+                <input type="phone" class="form-control" name="phone"
+                       placeholder="Впишите номер телефона" value="<?= $phone ?? '' ?>">
             </div>
         </div>
 
@@ -186,7 +202,8 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone']) and isset($_REQUEST['
             <label for="name" class="col-sm-2 control-label">Ваш EMAIL:</label>
             <div class="col-sm-4">
 
-                <input type="email" class="form-control" name="email" placeholder="Email" value="<?= $email ?? '' ?>">
+                <input type="email" class="form-control" name="email"
+                       placeholder="Email" value="<?= $email ?? '' ?>">
             </div>
         </div>
 
