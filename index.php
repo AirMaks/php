@@ -70,7 +70,12 @@ $error = false;
 
 <!doctype html>
 <html>
+<<<<<<< HEAD
 <body style="background: #f5c6cb";>
+=======
+<body style="background: #bd4147";>
+
+>>>>>>> 9a7808cd79c490e55684e85c171e33409e6c4c8f
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
