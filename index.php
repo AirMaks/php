@@ -74,9 +74,16 @@ $error = false;
 <!doctype html>
 <html>
 
-<body style="background: #ffe8a1";>
-<img src="fifa.jpg" align="center" width="200px">
+<body;>
+
 <head>
+    <style>
+        body{
+            background: url(img/900.jpg);
+            background-size: cover;
+        }
+
+    </style>
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
