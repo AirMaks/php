@@ -13,6 +13,7 @@ $error = false;
       and isset($_REQUEST['Position8']) and isset($_REQUEST['Position9'])
      and isset($_REQUEST['Position10']) and isset($_REQUEST['Position11']))
 
+
 {
           $name = $_REQUEST['name'];
          $phone = $_REQUEST['phone'];
@@ -28,6 +29,7 @@ $error = false;
      $Position9 = $_REQUEST['Position9'];
     $Position10 = $_REQUEST['Position10'];
     $Position11 = $_REQUEST['Position11'];
+
 
 
     if       (empty($name) || empty($phone) ||
@@ -64,14 +66,16 @@ $error = false;
         $message = 'Спасибо, что проголосовали!';
     }
 }
-
 ?>
+
+
+
 
 <!doctype html>
 <html>
 
-<body style="background: #fcf8e3";>
-
+<body style="background: #ffe8a1";>
+<img src="fifa.jpg" align="center" width="200px">
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -79,16 +83,34 @@ $error = false;
 </head>
 
 
+
+
 <div class="container">
 
-   <h2>Команда Мечты</h2>
+
+
+    <h2>Команда Мечты</h2>
    <h3>Проголосуй за свою команду:</h3>
 
     <?php if ( $message) : ?>
     <?= $message ?>
     <?php else: ?>
 
-        <form class="form-horizontal" action="index.php" method="post">
+
+    <form class="form-horizontal" action="index.php" method="post">
+
+
+        Страна:
+<select name="country">
+    <option value="Не выбрано">Выбрать страну</option>
+    <option value="Russia">Россия</option>
+    <option value="England">Англия</option>
+    <option value="China">Китай</option>
+    <option value="Italy">Италия</option>
+    <option value="Spain">Испания</option>
+</select><br>
+
+
 
 
         <div class="form-group">
@@ -182,72 +204,75 @@ $error = false;
         </div>
 
 
+<div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Ваше имя</label>
+    <div class="col-sm-4">
+        <input type="text" class="form-control" name="name"
+               placeholder="Впишите имя" value="<?= $name ?? '' ?>">
+    </div>
+</div>
 
-        <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">Ваше имя</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" name="name"
-                       placeholder="Впишите имя" value="<?= $name ?? '' ?>">
-            </div>
-        </div>
+<div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Номер Телефона</label>
+    <div class="col-sm-4">
+        <input type="phone" class="form-control" name="phone"
+               placeholder="Впишите номер телефона" value="<?= $phone ?? '' ?>">
+    </div>
+</div>
 
-        <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">Номер Телефона</label>
-            <div class="col-sm-4">
-                <input type="phone" class="form-control" name="phone"
-                       placeholder="Впишите номер телефона" value="<?= $phone ?? '' ?>">
-            </div>
-        </div>
+<div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Ваш EMAIL:</label>
+    <div class="col-sm-4">
 
-        <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">Ваш EMAIL:</label>
-            <div class="col-sm-4">
+        <input type="email" class="form-control" name="email"
+               placeholder="Email" value="<?= $email ?? '' ?>">
+    </div>
+</div>
 
-                <input type="email" class="form-control" name="email"
-                       placeholder="Email" value="<?= $email ?? '' ?>">
-            </div>
-        </div>
-
-
-            <div class="form-group">
-                <label for="name" class="col-sm-2 control-label">Ваши интересы:</label>
-           <p> <input type='checkbox' class='checkbox'
-                   name="delete_1" value="123">
-               Спорт</p>
-            </div>
-
-            <div class="form-group">
-                <p> <input type='checkbox' class='checkbox'
-                           name="delete_2" value="456">
-                    Музыка</p>
-            </div>
-
-            <div class="form-group">
-                <p> <input type='checkbox' class='checkbox'
-                           name="delete_3" value="789">
-                    Программирование</p>
-            </div>
-
-            <div class="form-group">
-                <p> <input type='checkbox' class='checkbox'
-                           name="delete_4" value="111">
-                    Другое</p>
-            </div>
 
 
 
         <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-primary">Отправить в FIFA</button>
-            </div>
-        </div>
+    <label for="name" class="col-sm-2 control-label">Ваши интересы:</label>
+    <p> <input type='checkbox' class='checkbox'
+               name="delete_1" value="123">
+        Спорт</p>
+</div>
+
+<div class="form-group">
+    <p> <input type='checkbox' class='checkbox'
+               name="delete_2" value="456">
+        Музыка</p>
+</div>
+
+<div class="form-group">
+    <p> <input type='checkbox' class='checkbox'
+               name="delete_3" value="789">
+        Программирование</p>
+</div>
+
+<div class="form-group">
+    <p> <input type='checkbox' class='checkbox'
+               name="delete_4" value="111">
+        Другое</p>
+</div>
+
+
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Отправить в FIFA</button>
+    </div>
+</div>
+
+
+
+<p class="alert-danger col-md-4"><?= $error ?></p>
+        </form>
 
 
 
 
-        <p class="alert-danger col-md-4"><?= $error ?></p>
-
-    </form>
 
 
 
