@@ -63,7 +63,7 @@ $error = false;
             PHP_EOL;
 
         file_put_contents('./contacts.txt', $row, FILE_APPEND);
-        $message = 'Спасибо, что проголосовали!';
+        $message = '<h3><strong>Спасибо, что проголосовали!</strong></h3>';
     }
 }
 ?>
@@ -79,8 +79,9 @@ $error = false;
 <head>
     <style>
         body{
-            background: url(img/900.jpg);
-            background-size: cover;
+            background: url(img/italian.jpg);
+            background-size: 1800px 1700px;
+
         }
 
     </style>
@@ -92,12 +93,12 @@ $error = false;
 
 
 
-<div class="container">
+<div class="container" align="center">
 
 
 
-    <h2>Команда Мечты</h2>
-   <h3>Проголосуй за свою команду:</h3>
+    <h2><strong>Команда Мечты</strong></h2>
+
 
     <?php if ( $message) : ?>
     <?= $message ?>
@@ -121,7 +122,7 @@ $error = false;
 
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">1.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">1.</label>
             <div class="col-sm-4">
                 <input type="text" name="Position1" class="form-control"
                        placeholder="Вратарь" value="<?= $Position1 ?? '' ?>">
@@ -131,7 +132,7 @@ $error = false;
 
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">2.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">2.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position2"
                        placeholder="Левый защитник" value="<?= $Position2 ?? '' ?>">
@@ -139,7 +140,7 @@ $error = false;
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">3.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">3.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position3"
                        placeholder="Центральный защитник" value="<?= $Position3 ?? '' ?>">
@@ -147,7 +148,7 @@ $error = false;
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">4.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">4.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position4"
                        placeholder="Центральный защитник" value="<?= $Position4 ?? '' ?>">
@@ -155,7 +156,7 @@ $error = false;
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">5.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">5.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position5"
                        placeholder="Правый защитник" value="<?= $Position5 ?? '' ?>">
@@ -163,7 +164,7 @@ $error = false;
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">6.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">6.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position6"
                        placeholder="Опорный полузащитник" value="<?= $Position6 ?? '' ?>">
@@ -171,7 +172,7 @@ $error = false;
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">7.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">7.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position7"
                        placeholder="Левый полузащитник" value="<?= $Position7 ?? '' ?>">
@@ -179,7 +180,7 @@ $error = false;
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">8.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">8.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position8"
                        placeholder="Правый полузащитник" value="<?= $Position8 ?? '' ?>">
@@ -187,7 +188,7 @@ $error = false;
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">9.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">9.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position9"
                        placeholder="Центральный полузащитник" value="<?= $Position9 ?? '' ?>">
@@ -195,7 +196,7 @@ $error = false;
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">10.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">10.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position10"
                        placeholder="Нападающий" value="<?= $Position10 ?? '' ?>">
@@ -203,7 +204,7 @@ $error = false;
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">11.</label>
+            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">11.</label>
             <div class="col-sm-4">
                 <input type="text" class="form-control" name="Position11"
                        placeholder="Нападающий" value="<?= $Position11 ?? '' ?>">
@@ -212,7 +213,7 @@ $error = false;
 
 
 <div class="form-group">
-    <label for="name" class="col-sm-2 control-label">Ваше имя</label>
+    <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">Your Name</label>
     <div class="col-sm-4">
         <input type="text" class="form-control" name="name"
                placeholder="Впишите имя" value="<?= $name ?? '' ?>">
@@ -220,7 +221,7 @@ $error = false;
 </div>
 
 <div class="form-group">
-    <label for="name" class="col-sm-2 control-label">Номер Телефона</label>
+    <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">Phone Number</label>
     <div class="col-sm-4">
         <input type="phone" class="form-control" name="phone"
                placeholder="Впишите номер телефона" value="<?= $phone ?? '' ?>">
@@ -228,7 +229,7 @@ $error = false;
 </div>
 
 <div class="form-group">
-    <label for="name" class="col-sm-2 control-label">Ваш EMAIL:</label>
+    <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">EMAIL:</label>
     <div class="col-sm-4">
 
         <input type="email" class="form-control" name="email"
@@ -240,7 +241,7 @@ $error = false;
 
 
         <div class="form-group">
-    <label for="name" class="col-sm-2 control-label">Ваши интересы:</label>
+    <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">Ваши интересы:</label>
     <p> <input type='checkbox' class='checkbox'
                name="delete_1" value="123">
         Спорт</p>
