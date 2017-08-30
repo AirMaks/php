@@ -41,7 +41,7 @@ $error = false;
         empty($Position10) || empty($Position11))
 
     {
-        $error = 'Не все поля заполнены?';
+        $error = 'Not all the strings filled?';
     }
 
     else
@@ -63,7 +63,7 @@ $error = false;
             PHP_EOL;
 
         file_put_contents('./contacts.txt', $row, FILE_APPEND);
-        $message = '<h3><strong>Спасибо, что проголосовали!</strong></h3>';
+        $message = '<h3><strong>Thanks for the vote!</strong></h3>';
     }
 }
 ?>
@@ -80,7 +80,7 @@ $error = false;
     <style>
         body{
             background: url(img/italian.jpg);
-            background-size: 1800px 1700px;
+            background-size: 1800px 1800px;
 
         }
 
@@ -93,12 +93,11 @@ $error = false;
 
 
 
-<div class="container" align="center">
+<div class="container" align="center" style="font-family: Broadway">
 
-
-
-    <h2><strong>Команда Мечты</strong></h2>
-
+<label style="margin-top: 30px">
+    <h1>Dream Team</h1>
+</label>
 
     <?php if ( $message) : ?>
     <?= $message ?>
@@ -108,131 +107,156 @@ $error = false;
     <form class="form-horizontal" action="index.php" method="post">
 
 
-        Страна:
 <select name="country">
-    <option value="Не выбрано">Выбрать страну</option>
-    <option value="Russia">Россия</option>
-    <option value="England">Англия</option>
-    <option value="China">Китай</option>
-    <option value="Italy">Италия</option>
-    <option value="Spain">Испания</option>
+    <option value="Have not chosen">Choose your country</option>
+    <option value="Russia">Russian Federation</option>
+    <option value="England">China</option>
+    <option value="China">England</option>
+    <option value="Italy">Italy</option>
+    <option value="Spain">Spain</option>
+     <option value="Spain">USA</option>
+     <option value="Spain">France</option>
+     <option value="Spain">Slovakia</option>
+     <option value="Spain">Greece</option>
+     <option value="Spain">Japan</option>
+     <option value="Spain">Iceland</option>
+     <option value="Spain">Denmark</option>
+     <option value="Spain">Canada</option>
+     <option value="Spain">Norway</option>
+     <option value="Spain">Portugal</option>
+     <option value="Spain">Hungary</option>
+     <option value="Spain">South Korea</option>
+     <option value="Spain">Ukraine</option>
+     <option value="Spain">Finland</option>
+     <option value="Spain">Sweden</option>
+     <option value="Spain">Switzerland</option>
+
 </select><br>
 
 
 
+<div class="custom-radio" style="margin-top: 20px">
 
+        <label for="name" class="col-sm-2 control-label">SEX:</label><br>
+        <input type="radio" name="voice" value="one" /> Male<br />
+        <input type="radio" name="voice" value="two" /> Female<br />
+
+</div>
+
+
+<div class="container" style="margin-top: 20px">
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">1.</label>
+            <label for="name" class="col-sm-2 control-label">1.</label>
             <div class="col-sm-4">
-                <input type="text" name="Position1" class="form-control"
-                       placeholder="Вратарь" value="<?= $Position1 ?? '' ?>">
+                <input  type="text" style="font-family: Serif" name="Position1" class="form-control"
+                       placeholder="Goalkeeper" value="<?= $Position1 ?? '' ?>">
             </div>
         </div>
 
 
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">2.</label>
+            <label for="name" class="col-sm-2 control-label">2.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position2"
-                       placeholder="Левый защитник" value="<?= $Position2 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position2"
+                       placeholder="Left defender" value="<?= $Position2 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">3.</label>
+            <label for="name" class="col-sm-2 control-label">3.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position3"
-                       placeholder="Центральный защитник" value="<?= $Position3 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position3"
+                       placeholder="Center back" value="<?= $Position3 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">4.</label>
+            <label for="name" class="col-sm-2 control-label">4.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position4"
-                       placeholder="Центральный защитник" value="<?= $Position4 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position4"
+                       placeholder="Center back" value="<?= $Position4 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">5.</label>
+            <label for="name" class="col-sm-2 control-label">5.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position5"
-                       placeholder="Правый защитник" value="<?= $Position5 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position5"
+                       placeholder="Right defender" value="<?= $Position5 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">6.</label>
+            <label for="name" class="col-sm-2 control-label">6.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position6"
-                       placeholder="Опорный полузащитник" value="<?= $Position6 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position6"
+                       placeholder="Defensive midfielder" value="<?= $Position6 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">7.</label>
+            <label for="name" class="col-sm-2 control-label">7.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position7"
-                       placeholder="Левый полузащитник" value="<?= $Position7 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position7"
+                       placeholder="Left midfielder" value="<?= $Position7 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">8.</label>
+            <label for="name" class="col-sm-2 control-label">8.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position8"
-                       placeholder="Правый полузащитник" value="<?= $Position8 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position8"
+                       placeholder="Right midfielder" value="<?= $Position8 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">9.</label>
+            <label for="name" class="col-sm-2 control-label">9.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position9"
-                       placeholder="Центральный полузащитник" value="<?= $Position9 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position9"
+                       placeholder="Center midfielder" value="<?= $Position9 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">10.</label>
+            <label for="name" class="col-sm-2 control-label">10.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position10"
-                       placeholder="Нападающий" value="<?= $Position10 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position10"
+                       placeholder="Forward" value="<?= $Position10 ?? '' ?>">
             </div>
         </div>
 
         <div class="form-group">
-            <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">11.</label>
+            <label for="name" class="col-sm-2 control-label">11.</label>
             <div class="col-sm-4">
-                <input type="text" class="form-control" name="Position11"
-                       placeholder="Нападающий" value="<?= $Position11 ?? '' ?>">
+                <input type="text" class="form-control" style="font-family: Serif" name="Position11"
+                       placeholder="Forward" value="<?= $Position11 ?? '' ?>">
             </div>
         </div>
 
 
 <div class="form-group">
-    <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">Your Name</label>
+    <label for="name" class="col-sm-2 control-label">Your Name</label>
     <div class="col-sm-4">
-        <input type="text" class="form-control" name="name"
-               placeholder="Впишите имя" value="<?= $name ?? '' ?>">
+        <input type="text" class="form-control" style="font-family: Serif" name="name"
+               placeholder="Type your name" value="<?= $name ?? '' ?>">
     </div>
 </div>
 
 <div class="form-group">
-    <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">Phone Number</label>
+    <label for="name" class="col-sm-2 control-label">Phone Number</label>
     <div class="col-sm-4">
-        <input type="phone" class="form-control" name="phone"
-               placeholder="Впишите номер телефона" value="<?= $phone ?? '' ?>">
+        <input type="phone" class="form-control" style="font-family: Serif" name="phone"
+               placeholder="Type your phone number" value="<?= $phone ?? '' ?>">
     </div>
 </div>
 
 <div class="form-group">
-    <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">EMAIL:</label>
+    <label for="name" class="col-sm-2 control-label">EMAIL:</label>
     <div class="col-sm-4">
 
-        <input type="email" class="form-control" name="email"
+        <input type="email" class="form-control" style="font-family: Serif" name="email"
                placeholder="Email" value="<?= $email ?? '' ?>">
     </div>
 </div>
@@ -241,39 +265,39 @@ $error = false;
 
 
         <div class="form-group">
-    <label for="name" class="col-sm-2 control-label" style="font-family: Broadway">Ваши интересы:</label>
+    <label for="name" class="col-sm-2 control-label">Your hobby:</label>
     <p> <input type='checkbox' class='checkbox'
                name="delete_1" value="123">
-        Спорт</p>
+        Sport</p>
 </div>
 
 <div class="form-group">
     <p> <input type='checkbox' class='checkbox'
                name="delete_2" value="456">
-        Музыка</p>
+        Music</p>
 </div>
 
 <div class="form-group">
     <p> <input type='checkbox' class='checkbox'
                name="delete_3" value="789">
-        Программирование</p>
+        Coding</p>
 </div>
 
 <div class="form-group">
     <p> <input type='checkbox' class='checkbox'
                name="delete_4" value="111">
-        Другое</p>
+        Other</p>
 </div>
 
 
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary">Отправить в FIFA</button>
+        <button type="submit" class="btn btn-primary">SEND TO FIFA</button>
     </div>
 </div>
 
-
+</div>
 
 <p class="alert-danger col-md-4"><?= $error ?></p>
         </form>
