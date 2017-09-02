@@ -111,14 +111,17 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
 
 
 <head>
+
     <style>
-        body{
+
+        body {
             background: url(img/italian.jpg);
             background-size: 1800px 1800px;
-
+            
         }
-
     </style>
+
+
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -127,7 +130,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
 
 
 
-<div class="container" align="center" style="font-family: Broadway">
+<div class="container" align="center"  style="font-family: Broadway">
 
 <label style="margin-top: 30px">
     <h1>Dream Team</h1>
@@ -147,8 +150,11 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
        <p>Your age:</p>
            <input type="number" name="age"  min="14" max="112" style="width: 50px" required><br>
 
-        
-        <input type="range" min="0" max="220" value="0" name="percentage">
+<div style="margin-top: 20px">
+       Height <input type="range" min="0" max="220" value="0" name="percentage"><br>
+ Weight <input type="range" min="0" max="400" value="0" name="percentage"><br>
+
+</div>
 
         <div style="margin-top: 20px" >
 
