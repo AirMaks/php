@@ -147,17 +147,8 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
        <p>Your age:</p>
            <input type="number" name="age"  min="14" max="112" style="width: 50px" required><br>
 
-        <fieldset style="margin-top: 20px">
-            <strong>Your Indicators</strong><br>
-            <label for="height">Height: </label>
-            <span class="leftLabel">0</span>
-            <input type="range" min="0" max="220" step="1" value="0" id="height" name="height"><span class="rightLabel">220</span>
-            <br>
-
-            <label for="weight">Weight: </label>
-            <span class="leftLabel">0</span>
-            <input type="range" min="0" max="450" step="1" value="0" id="weight" name="weight"><span class="rightLabel">400</span>
-        </fieldset>
+        
+        <input type="range" min="0" max="220" value="0" name="percentage">
 
         <div style="margin-top: 20px" >
 
@@ -407,52 +398,52 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
     <div style="width: 300px">
 
             <label for="name" class="col-sm-2 control-label">1.</label>
-            <input  type="text" style="font-family: Serif" name="Position1" class="form-control"
+            <input  type="text" pattern="[A-Za-zА-Яа-я]+" style="font-family: Serif" name="Position1" class="form-control"
                        placeholder="Goalkeeper" value="<?= $Position1 ?? '' ?>" required>
 
             <label for="name" class="col-sm-2 control-label">2.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position2"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position2"
                        placeholder="Left defender" value="<?= $Position2 ?? '' ?>" required>
 
             <label for="name" class="col-sm-2 control-label">3.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position3"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position3"
                        placeholder="Center back" value="<?= $Position3 ?? '' ?>" required>
 
             <label for="name" class="col-sm-2 control-label">4.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position4"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position4"
                        placeholder="Center back" value="<?= $Position4 ?? '' ?>" required>
 
             <label for="name" class="col-sm-2 control-label">5.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position5"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position5"
                        placeholder="Right defender" value="<?= $Position5 ?? '' ?>" required>
 
             <label for="name" class="col-sm-2 control-label">6.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position6"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position6"
                        placeholder="Defensive midfielder" value="<?= $Position6 ?? '' ?>" required>
 
             <label for="name" class="col-sm-2 control-label">7.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position7"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position7"
                        placeholder="Left midfielder" value="<?= $Position7 ?? '' ?>" required>
 
             <label for="name" class="col-sm-2 control-label">8.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position8"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position8"
                        placeholder="Right midfielder" value="<?= $Position8 ?? '' ?>" required>
 
             <label for="name" class="col-sm-2 control-label">9.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position9"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position9"
                        placeholder="Center midfielder" value="<?= $Position9 ?? '' ?>" required>
 
             <label for="name" class="col-sm-2 control-label">10.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position10"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position10"
                        placeholder="Forward" value="<?= $Position10 ?? '' ?>" required>
 
 
             <label for="name" class="col-sm-2 control-label">11.</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="Position11"
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="Position11"
                        placeholder="Forward" value="<?= $Position11 ?? '' ?>" required>
 
-        <label for="name">Your Name</label>
-            <input type="text" class="form-control" style="font-family: Serif" name="name"
+        <label  for="name">Your Name</label>
+            <input type="text" pattern="[A-Za-zА-Яа-я]+" class="form-control" style="font-family: Serif" name="name"
                placeholder="Type your name" value="<?= $name ?? '' ?>" required>
 
 
