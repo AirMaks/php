@@ -5,6 +5,7 @@ $error = false;
 
 
 
+
 $email = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -28,8 +29,9 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
       and isset($_REQUEST['Position4']) and isset($_REQUEST['Position5'])
       and isset($_REQUEST['Position6']) and isset($_REQUEST['Position7'])
       and isset($_REQUEST['Position8']) and isset($_REQUEST['Position9'])
-     and isset($_REQUEST['Position10']) and isset($_REQUEST['Position11'])
-           and isset($_REQUEST['age']) and isset($_REQUEST['country']) and isset($_REQUEST['gender']))
+      and isset($_REQUEST['Position10']) and isset($_REQUEST['Position11'])
+      and isset($_REQUEST['age']) and isset($_REQUEST['country'])
+      and isset($_REQUEST['gender']) and isset($_REQUEST['favcolor']))
 
 
 {
@@ -50,6 +52,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
     $age = $_REQUEST['age'];
     $country = $_REQUEST['country'];
     $gender = $_REQUEST['gender'];
+    $favcolor = $_REQUEST['favcolor'];
 
 
 
@@ -60,7 +63,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
          empty($Position6) || empty($Position7) ||
          empty($Position8) || empty($Position9) ||
         empty($Position10) || empty($Position11) ||
-    empty($age) || empty($country) || empty($gender))
+    empty($age) || empty($country) || empty($gender) || empty($favcolor))
 
     {
       $error = 'Not all the strings filled?';
@@ -85,13 +88,13 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
             '. Ваш Центральный полузащитник: ' . $Position9 .
             '. Ваш Нападающий: ' . $Position10 .
             '. Ваш Нападающий: ' . $Position11 .
+            '. Ваш любимый цвет: ' . $favcolor .
             PHP_EOL;
 
         file_put_contents('./contacts.txt', $row, FILE_APPEND);
-        $message = '<h3><strong>Thanks for the vote!</strong></h3>';
+        $message = '<h3><strong>Thanks for the vote, '. $name . '!</strong></h3>';
     }
 }
-
 
 
 
@@ -137,16 +140,31 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
 
     <form class="form-horizontal" action="index.php" method="post">
 
+        <label for="color">Favorite Color: </label>
+        <input type="color" id="color" name="favcolor">
+        <br>
 
        <p>Your age:</p>
-           <input type="number" name="age" style="width: 50px" required><br>
+           <input type="number" name="age"  min="14" max="112" style="width: 50px" required><br>
 
+        <fieldset style="margin-top: 20px">
+            <strong>Your Indicators</strong><br>
+            <label for="height">Height: </label>
+            <span class="leftLabel">0</span>
+            <input type="range" min="0" max="220" step="1" value="0" id="height" name="height"><span class="rightLabel">220</span>
+            <br>
 
+            <label for="weight">Weight: </label>
+            <span class="leftLabel">0</span>
+            <input type="range" min="0" max="450" step="1" value="0" id="weight" name="weight"><span class="rightLabel">400</span>
+        </fieldset>
 
-        <div class="form-horizontal" style="margin-top: 20px" >
+        <div style="margin-top: 20px" >
 
- <select name="country" style="width: 250px">
-    <option value="AX">AALAND ISLANDS</option>
+    <label for="country">Your Country: </label><br>
+ <select id="country" name="country" style="width: 250px">
+
+     <option value="AX">AALAND ISLANDS</option>
     <option value="AF">AFGHANISTAN</option>
     <option value="AL">ALBANIA</option>
     <option value="DZ">ALGERIA</option>
@@ -372,6 +390,7 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
     <option value="ZW">ZIMBABWE</option>
 
 </select><br>
+
 </div>
 
 
@@ -436,11 +455,11 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
             <input type="text" class="form-control" style="font-family: Serif" name="name"
                placeholder="Type your name" value="<?= $name ?? '' ?>" required>
 
-<div  class="phone_fieldWrapper">
+
             <label for="name">Phone Number:</label>
-            <input name="phone" type="text" value="<?= $name ?? '' ?>" class="form-control" style="font-family: Serif" required
-                   placeholder="+0-000-000-00-00"/>
-</div>
+            <input name="phone" type="number" value="<?= $name ?? '' ?>" class="form-control" style="font-family: Serif" required
+                   placeholder="+x-xxx-xxx-xx-xx"/>
+
         <label for="name">EMAIL:</label>
             <input type="email" class="form-control" style="font-family: Serif" name="email"
                placeholder="example@mail.com" value="<?= $email ?? '' ?>" required>
