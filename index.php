@@ -4,34 +4,15 @@ $message = false;
 $error = false;
 
 
-
-
-$email = "";
-    if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
-        $email = test_input($_POST["email"]);
-    }
-
-function test_input($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
-
-
-
-
-if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
-          and isset($_REQUEST['email']) and isset($_REQUEST['Position1'])
-      and isset($_REQUEST['Position2']) and isset($_REQUEST['Position3'])
-      and isset($_REQUEST['Position4']) and isset($_REQUEST['Position5'])
-      and isset($_REQUEST['Position6']) and isset($_REQUEST['Position7'])
-      and isset($_REQUEST['Position8']) and isset($_REQUEST['Position9'])
+if (isset($_REQUEST['name'])             and isset($_REQUEST['phone'])
+      and isset($_REQUEST['email'])      and isset($_REQUEST['Position1'])
+      and isset($_REQUEST['Position2'])  and isset($_REQUEST['Position3'])
+      and isset($_REQUEST['Position4'])  and isset($_REQUEST['Position5'])
+      and isset($_REQUEST['Position6'])  and isset($_REQUEST['Position7'])
+      and isset($_REQUEST['Position8'])  and isset($_REQUEST['Position9'])
       and isset($_REQUEST['Position10']) and isset($_REQUEST['Position11'])
-      and isset($_REQUEST['age']) and isset($_REQUEST['country'])
-      and isset($_REQUEST['gender']) and isset($_REQUEST['favcolor']))
+      and isset($_REQUEST['age'])        and isset($_REQUEST['country'])
+      and isset($_REQUEST['gender'])     and isset($_REQUEST['favcolor']))
 
 
 {
@@ -49,21 +30,19 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
      $Position9 = $_REQUEST['Position9'];
     $Position10 = $_REQUEST['Position10'];
     $Position11 = $_REQUEST['Position11'];
-    $age = $_REQUEST['age'];
-    $country = $_REQUEST['country'];
-    $gender = $_REQUEST['gender'];
-    $favcolor = $_REQUEST['favcolor'];
+           $age = $_REQUEST['age'];
+       $country = $_REQUEST['country'];
+        $gender = $_REQUEST['gender'];
+      $favcolor = $_REQUEST['favcolor'];
 
 
 
-    if       (empty($name) || empty($phone) ||
-             empty($email) || empty($Position1) ||
-         empty($Position2) || empty($Position3) ||
-         empty($Position4) || empty($Position5) ||
-         empty($Position6) || empty($Position7) ||
-         empty($Position8) || empty($Position9) ||
-        empty($Position10) || empty($Position11) ||
-    empty($age) || empty($country) || empty($gender) || empty($favcolor))
+    if       (empty($name) || empty($phone)      || empty($email) ||
+         empty($Position1) || empty($Position2)  || empty($Position3) ||
+         empty($Position4) || empty($Position5)  || empty($Position6) ||
+        empty($Position7)  || empty($Position8)  || empty($Position9)  ||
+        empty($Position10) || empty($Position11) || empty($age) ||
+        empty($country)    || empty($gender)     || empty($favcolor))
 
     {
       $error = 'Not all the strings filled?';
@@ -105,23 +84,8 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
 <!doctype html>
 <html>
 
-<body>
-
-
-
 
 <head>
-
-    <style>
-
-        body {
-            background: url(img/italian.jpg);
-            background-size: 1800px 1800px;
-            
-        }
-    </style>
-
-
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -129,12 +93,25 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
 
 
 
+<body>
+
+<style>
+
+    body {
+        background: url(img/italian.jpg);
+        background-size: 1800px 1800px;
+        background-position: center;               /* При масштабировании(увеличение) картинка фона остается по центру*/
+    }
+
+</style>
 
 <div class="container" align="center"  style="font-family: Broadway">
 
-<label style="margin-top: 30px">
-    <h1>Dream Team</h1>
-</label>
+    <label style="margin-top: 30px" style="font-family: Ebrima"><h1><strong><a href="http://www.fifa.com/index.html" target="_blank" style="color: orangered">FIFA</a></strong></h1></label><br>
+
+    <label style="margin-top: 5px"><h2>Dream Team</h2></label>
+
+
 
     <?php if ( $message) : ?>
     <?= $message ?>
@@ -143,25 +120,24 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
 
     <form class="form-horizontal" action="index.php" method="post">
 
-        <label for="color">Favorite Color: </label>
+        <p>Your age:</p>
+        <input type="number" name="age"  min="14" max="112" style="width: 50px" required><br>
+
+        <label for="color" style="margin-top: 20px">Favorite Color: </label><br>
         <input type="color" id="color" name="favcolor">
-        <br>
 
-       <p>Your age:</p>
-           <input type="number" name="age"  min="14" max="112" style="width: 50px" required><br>
 
-<div style="margin-top: 20px">
-       Height <input type="range" min="0" max="220" value="0" name="percentage"><br>
- Weight <input type="range" min="0" max="400" value="0" name="percentage"><br>
 
-</div>
+
+
+
 
         <div style="margin-top: 20px" >
 
     <label for="country">Your Country: </label><br>
  <select id="country" name="country" style="width: 250px">
 
-     <option value="AX">AALAND ISLANDS</option>
+    <option value="AX">AALAND ISLANDS</option>
     <option value="AF">AFGHANISTAN</option>
     <option value="AL">ALBANIA</option>
     <option value="DZ">ALGERIA</option>
@@ -462,7 +438,6 @@ if (isset($_REQUEST['name']) and isset($_REQUEST['phone'])
                placeholder="example@mail.com" value="<?= $email ?? '' ?>" required>
 
 
-<!--8-->
 
 
 <form action="index.php" method="post" required>
